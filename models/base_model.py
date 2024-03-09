@@ -8,7 +8,8 @@ from datetime import datetime
 class BaseModel:
     """
     Base Class BaseModel define all common
-    attributes/methodes for all other classes."""
+    attributes/methodes for all other classes.
+    """
 
     def __init__(self, *args, **kwargs):
         """
@@ -29,13 +30,13 @@ class BaseModel:
         Returns the string representation
         of the instance
         """
-        return "[{}] ({}) {}".format(
-            type(self).__name__, self.id, self.__dict__)
+        return f"{[self.__class__.__name__]} {(self.id)} {(self.__dict__)}"
 
     def save(self):
         """
         Update the public instance attribute
-        update_at with the current time"""
+        update_at with the current time
+        """
         self.updated_at = datetime.now()
 
     def to_dict(self):
@@ -44,7 +45,7 @@ class BaseModel:
         of __dict__ of the instance
         """
         dict = {**self.__dict__}
-        dict['__class__'] = type(self).__name__
+        dict['__class__'] = self.__class__.__name__
         dict['created_at'] = dict['created_at'].isoformat()
         dict['updated_at'] = dict['updated_at'].isoformat()
         return dict
