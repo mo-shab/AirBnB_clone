@@ -47,7 +47,7 @@ class FileStorage:
         if the file doesn't exist, no exception
         should be raised
         """
-        definedClasses = {'BaseModle': BaseModel}
+        definedClasses = {'BaseModel': BaseModel}
         
         try:
             with open(FileStorage.__file_path, "r", encoding="utf-8") as file:
