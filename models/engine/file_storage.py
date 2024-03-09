@@ -20,7 +20,7 @@ class FileStorage:
         function all that dict _objects
         """
         return FileStorage.__objects
-    
+
     def new(self, obj):
         """
         set _objects the obj with key
@@ -48,7 +48,7 @@ class FileStorage:
         should be raised
         """
         definedClasses = {'BaseModel': BaseModel}
-        
+
         try:
             with open(FileStorage.__file_path, "r", encoding="utf-8") as file:
                 deserialized = json.load(file)
@@ -56,6 +56,6 @@ class FileStorage:
                     clsName = obj_values["__class__"]
                     cls_obj = definedClasses[clsName]
                     self.new(cls_obj(**obj_values))
-        
+
         except FileNotFoundError:
             pass
