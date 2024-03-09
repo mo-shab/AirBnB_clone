@@ -7,7 +7,6 @@ from datetime import datetime
 import models
 
 
-
 class BaseModel:
     """
     Base Class BaseModel define all common
@@ -20,7 +19,8 @@ class BaseModel:
         if kwargs:
             for key, value in kwargs.items():
                 if key == 'created_at' or key == 'updated_at':
-                    setattr(self, key, datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
+                    setattr(self, key, datetime.strptime
+                            (value, "%Y-%m-%dT%H:%M:%S.%f"))
                 elif key != '__class__':
                     setattr(self, key, value)
         else:
@@ -34,7 +34,8 @@ class BaseModel:
         Returns the string representation
         of the instance
         """
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+                                     self.id, self.__dict__)
 
     def save(self):
         """
@@ -42,8 +43,8 @@ class BaseModel:
         update_at with the current time
         """
         self.updated_at = datetime.now()
-        #Call save(self) methode of storage to save all instance
-        #of BaseModelto JSON file
+        # Call save(self) methode of storage to save all instance
+        # of BaseModelto JSON file
         models.storage.save()
 
     def to_dict(self):
