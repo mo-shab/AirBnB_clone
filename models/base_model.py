@@ -5,6 +5,7 @@ Module: base.py
 import uuid
 from datetime import datetime
 
+
 class BaseModel:
     """
     Base Class BaseModel define all common
