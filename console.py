@@ -2,10 +2,12 @@
 """
 The Console Module
 """
-import cmd, sys
+import cmd
+
 
 class HBNBCommand(cmd.Cmd):
-    """command interpreter class"""
+    """command interpreter class
+    """
 
     prompt = "(hbnb) "
 
@@ -29,6 +31,7 @@ class HBNBCommand(cmd.Cmd):
         """To get help on a command, type help <topic>.
         """
         return super().do_help(arg)
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
