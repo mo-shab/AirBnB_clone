@@ -2,7 +2,7 @@
 """
 The Console Module
 """
-import cmd
+import cmd, sys
 
 class HBNBCommand(cmd.Cmd):
     """command interpreter class"""
@@ -24,7 +24,7 @@ class HBNBCommand(cmd.Cmd):
         """Do nothing when an empty line is entered
         """
         pass
-    
+
     def do_help(self, arg):
         """To get help on a command, type help <topic>.
         """
