@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """ Unit test BaseModel
 """
-
 import unittest
 import models
 from models.base_model import BaseModel
+
 
 
 class TestBaseModel(unittest.TestCase):
