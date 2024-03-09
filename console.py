@@ -15,14 +15,20 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_EOF(self, arg):
-        """Exit the program
+        """Inbuilt EOF command to gracefully catch errors.
         """
+        print("")
         return True
 
     def emptyline(self):
         """Do nothing when an empty line is entered
         """
         pass
+    
+    def do_help(self, arg):
+        """To get help on a command, type help <topic>.
+        """
+        return super().do_help(arg)
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
