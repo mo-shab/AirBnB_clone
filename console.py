@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""The Console Module"""
+"""The Command Line Interpreter."""
 
 from models import *
 import json
@@ -8,25 +8,29 @@ import re
 
 
 class HBNBCommand(cmd.Cmd):
-    """Command interpreter Class"""
+    """Class that defines Airbnb clone public class instances."""
 
     prompt = "(hbnb) "
 
     def do_EOF(self, line):
         """Function handle end of file character (Ctrl+D)."""
+
         print()
         return (True)
 
     def do_quit(self, line):
         """Function that exits the shell in interactive mode."""
+
         return (True)
 
     def emptyline(self):
         """Function that does nothing on ENTER."""
+
         pass
 
     def do_create(self, line):
         """Function that creates new instance of BaseModel."""
+
         if line == "" or line is None:
             print("** class name missing **")
 
@@ -40,6 +44,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, line):
         """Function that prints the string representation of an instance."""
+
         if line == "" or line is None:
             print("** class name missing **")
 
