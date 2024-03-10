@@ -16,16 +16,16 @@ class TestPlace(unittest.TestCase):
         """Function that defines instructions within unittests"""
 
         cls_instance.place = Place()
-        cls_instance.place.city_id = "MA"
+        cls_instance.place.city_id = "CMN"
         cls_instance.place.user_id = "13"
-        cls_instance.place.name = "Maamoura Coast"
-        cls_instance.place.description = "Beach House"
-        cls_instance.place.number_rooms = 6
-        cls_instance.place.number_bathrooms = 6
-        cls_instance.place.max_guest = 6
-        cls_instance.place.price_by_night = 50
-        cls_instance.place.latitude = 1.3
-        cls_instance.place.longitude = 3.1
+        cls_instance.place.name = "Maarif"
+        cls_instance.place.description = "maarif Villa"
+        cls_instance.place.number_rooms = 10
+        cls_instance.place.number_bathrooms = 15
+        cls_instance.place.max_guest = 30
+        cls_instance.place.price_by_night = 500
+        cls_instance.place.latitude = 10.3
+        cls_instance.place.longitude = 30.1
         cls_instance.place.amenity_ids = []
 
     @classmethod

@@ -15,7 +15,7 @@ class TestBaseModel(unittest.TestCase):
         """Function that defines instructions within unittests"""
 
         cls_instance.base = BaseModel()
-        cls_instance.base.name = "Hannibal"
+        cls_instance.base.name = "Son Goku"
         cls_instance.base.id = 13
 
     @classmethod

@@ -16,8 +16,8 @@ class TestCity(unittest.TestCase):
         """Function that defines instructions within unittests"""
 
         cls_instance.city = City()
-        cls_instance.city.name = "Maamoura"
-        cls_instance.city.state_id = "MA"
+        cls_instance.city.name = "Casablanca"
+        cls_instance.city.state_id = "CMN"
 
     @classmethod
     def tearDownClass(cls_instance):

@@ -16,10 +16,10 @@ class TestUser(unittest.TestCase):
         """Function that defines instructions within unittests"""
 
         cls_instance.my_user = User()
-        cls_instance.my_user.first_name = "Hannibal"
-        cls_instance.my_user.last_name = "Mejbri"
-        cls_instance.my_user.email = "hm@test.com"
-        cls_instance.my_user.password = "test"
+        cls_instance.my_user.first_name = "Ahmed"
+        cls_instance.my_user.last_name = "SHAB"
+        cls_instance.my_user.email = "email@email.com"
+        cls_instance.my_user.password = "123456"
 
     @classmethod
     def tearDownClass(cls_instance):

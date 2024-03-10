@@ -16,7 +16,7 @@ class TestState(unittest.TestCase):
         """Function that defines instructions within unittests"""
 
         cls_instance.state = State()
-        cls_instance.state.name = "NBO"
+        cls_instance.state.name = "CMN"
 
     @classmethod
     def tearDownClass(cls_instance):

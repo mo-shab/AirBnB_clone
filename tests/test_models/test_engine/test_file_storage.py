@@ -17,10 +17,10 @@ class TestFileStorage(unittest.TestCase):
         """Function that assigns variables to instances"""
 
         cls_instance.user = User()
-        cls_instance.user.email = "user@test.com"
-        cls_instance.user.password = "test"
-        cls_instance.user.first_name = "Lionel"
-        cls_instance.user.last_name = "Messi"
+        cls_instance.user.email = "email@email.com"
+        cls_instance.user.password = "123456"
+        cls_instance.user.first_name = "SHAB"
+        cls_instance.user.last_name = "Mohammed"
         cls_instance.storage = FileStorage()
 
     @classmethod
@@ -54,7 +54,7 @@ class TestFileStorage(unittest.TestCase):
         storage = FileStorage()
         all_dict = storage.all()
         user = User()
-        user.name = "Messi"
+        user.name = "SHAB"
         user.id = 10
         storage.new(user)
         user_key = user.__class__.__name__ + "." + str(user.id)

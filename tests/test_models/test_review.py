@@ -16,9 +16,9 @@ class TestReview(unittest.TestCase):
         """Function that defines instructions within unittests"""
 
         cls_instance.review = Review()
-        cls_instance.review.place_id = "MA"
-        cls_instance.review.user_id = "HAN-13"
-        cls_instance.review.text = "5 Star"
+        cls_instance.review.place_id = "CMN"
+        cls_instance.review.user_id = "CMN3"
+        cls_instance.review.text = "3 Stars"
 
     @classmethod
     def tearDownClass(cls_instance):
