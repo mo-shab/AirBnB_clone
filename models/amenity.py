@@ -5,6 +5,6 @@ from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    """Class that defines Amenity instance atribute."""
+    """Class that defines Amenity atribute."""
 
     name = ""

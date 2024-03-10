@@ -1,29 +1,29 @@
 #!/usr/bin/python3
-"""Module that defines BaseModel class and instances"""
+"""Module BaseModel class and instances"""
 
+from uuid import uuid4
 from datetime import datetime
 from models import storage
-from uuid import uuid4
 
 
 class BaseModel:
-    """Class that defines Base Model for Airbnb clone"""
+    """Class that defines Base Model"""
 
     def __init__(self, *args, **kwargs):
         """Function to initialize instance public attributes"""
 
         if kwargs is not None and kwargs != {}:
-            for i in kwargs:
-                if i == "created_at":
+            for key in kwargs:
+                if key == "created_at":
                     self.__dict__["created_at"] = datetime.strptime(
                             kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f")
 
-                elif i == "updated_at":
+                elif key == "updated_at":
                     self.__dict__["updated_at"] = datetime.strptime(
                             kwargs["updated_at"], "%Y-%m-%dT%H:%M:%S.%f")
 
                 else:
-                    self.__dict__[i] = kwargs[i]
+                    self.__dict__[key] = kwargs[key]
 
         else:
             self.id = str(uuid4())
@@ -38,7 +38,7 @@ class BaseModel:
                 self.id, self.__dict__))
 
     def save(self):
-        """Function to update public instance attributes with current date"""
+        """Function to update public instance attributes with updated date"""
 
         self.updated_at = datetime.now()
         storage.save()
