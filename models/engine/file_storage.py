@@ -5,6 +5,13 @@
 import json
 import os
 from datetime import datetime
+from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class FileStorage:
@@ -36,14 +43,6 @@ class FileStorage:
     def classes(self):
         """Function that returns dictionary of class instances"""
 
-        from models.base_model import BaseModel
-        from models.user import User
-        from models.state import State
-        from models.city import City
-        from models.amenity import Amenity
-        from models.place import Place
-        from models.review import Review
-
         classes = {"Amenity": Amenity,
                    "BaseModel": BaseModel,
                    "City": City,
@@ -52,7 +51,7 @@ class FileStorage:
                    "User": User,
                    "State": State}
         return (classes)
-
+ 
     def reload(self):
         """
         deserializes the JSON file to _objects
@@ -60,15 +59,18 @@ class FileStorage:
         if the file doesn't exist, no exception
         should be raised
         """
+        definedClasses = {'BaseModel': BaseModel}
 
-        if not os.path.isfile(self.__file_path):
-            return
+        try:
+            with open(FileStorage.__file_path, "r", encoding="utf-8") as file:
+                deserialized = json.load(file)
+                for obj_values in deserialized.values():
+                    clsName = obj_values["__class__"]
+                    cls_obj = definedClasses[clsName]
+                    self.new(cls_obj(**obj_values))
 
-        with open(self.__file_path, "r", encoding="utf-8") as file:
-            obj_dict = json.load(file)
-            obj_dict = {k: self.classes()[v["__class__"]](**v) for
-                        k, v in obj_dict.items()}
-            self.__objects = obj_dict
+        except FileNotFoundError:
+            pass
 
     def attributes(self):
         """Function that returns class instances and their attributes"""
