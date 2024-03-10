@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module that defines Place class."""
+"""Module of Place class."""
 
 from models.base_model import BaseModel
 
