@@ -51,7 +51,7 @@ class FileStorage:
                    "User": User,
                    "State": State}
         return (classes)
- 
+
     def reload(self):
         """
         deserializes the JSON file to _objects
