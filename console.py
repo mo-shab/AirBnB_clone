@@ -3,6 +3,7 @@
 The Console Module
 """
 import cmd
+import sys
 
 
 class HBNBCommand(cmd.Cmd):
