@@ -1,4 +1,3 @@
-/* Locations and amenities popover menu */
 .filters .popover {
     background-color: #FAFAFA;
     width: 100%;
@@ -8,30 +7,25 @@
     position:absolute;
 }
 
-/* Locations and amenities popover hover */
 .filters .locations:hover .popover,
 .filters .amenities:hover .popover{
-    display: block;	/* Display the dropdown */
+    display: block;
 }
 
-/* Locations list style */
 .filters .locations ul {
     padding: 6px 0 6px 0;
   }
   
-/* Locations list element margin */
 .filters .locations li {
   margin: 0 auto 6px 3em;
   list-style: none;
 }
 
-/* Amenities list element margin */
 .filters .amenities li {
   margin: 12px auto 12px 30px;
   list-style: none;
 }
 
-/* Header 2 style */
 .filters h2 {
     font-size: 16px;
     font-weight: bold;
